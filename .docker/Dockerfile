@@ -28,7 +28,7 @@ RUN apk add --no-cache \
     ffmpeg
 
 # Copy the Go-built application from the previous stage
-COPY --from=go-builder /tmp/build/seanime /app/seanime
+COPY --from=go-builder /tmp/build/seanime/seanime /app/seanime
 
 # Create directories for Seanime, qBittorrent and Supervisord
 RUN mkdir -p /app /data /var/log/supervisor
@@ -46,6 +46,7 @@ COPY ./.docker/config /config
 # Create and use seanime-user
 RUN adduser -D seanime-user
 RUN chown -R seanime-user:seanime-user /config
+RUN chown -R seanime-user:seanime-user /data
 RUN chown -R seanime-user:seanime-user /var/log/supervisor
 
 USER seanime-user
