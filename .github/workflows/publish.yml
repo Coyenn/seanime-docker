@@ -42,7 +42,7 @@ jobs:
         if: steps.check_build.outputs.BUILD_NEEDED == 'true'
         run: |
           chmod +x ./.docker/prepare.sh
-          ./.docker/prepare.sh
+          ./.docker/prepare.sh ${{ steps.seanime_release.outputs.LATEST_RELEASE }}
         shell: bash
 
       - name: Log in to Docker Hub
