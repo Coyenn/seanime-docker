@@ -11,6 +11,10 @@ Video transcoding via [FFmpeg](https://ffmpeg.org/) works out of the box.
 docker run -it -p 3000:8080 -p 3001:8081 --restart=always --name seanime coyann/seanime
 ```
 
+### With Bind Mounts
+
+If you use bind mounts, make sure to copy the `config` directory (`.docker/config`) to the host machine and use it as the source for the bind mount.
+
 ## Configuration
 
 ### Ports
