@@ -30,10 +30,6 @@ services:
     restart: always
 ```
 
-### With Bind Mounts
-
-If you use bind mounts, make sure to copy the `config` directory (`.docker/config`) to the host machine and use it as the source for the bind mount.
-
 ## Configuration
 
 ### Ports
